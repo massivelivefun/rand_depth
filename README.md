@@ -1,4 +1,4 @@
-# rand_depth
+# rand-depth
 
 A simple random automated test suite covering max depth concepts.
 
@@ -6,40 +6,39 @@ A simple random automated test suite covering max depth concepts.
 
 Create a virtual environment.
 
-```python3 -m venv /path/to/new/virtual/environment```
+`python3 -m venv /path/to/new/virtual/environment`
 
 Then activate the virtual environment.
 
 On ZSH or BASH...
 
-```source ./<venv>/bin/activate```
+`source ./<venv>/bin/activate`
 
 On FISH...
 
-```./<venv>/bin/activate.fish```
+`./<venv>/bin/activate.fish`
 
-Afterwards, install the python packages in the
-requirements.txt with the venv's pip or pip3.
+Afterwards, install the python packages in the requirements.txt with the venv's
+pip or pip3.
 
-```pip install -r requirements.txt```
+`pip install -r requirements.txt`
 
 Or...
 
-```pip3 install -r requirements.txt```
+`pip3 install -r requirements.txt`
 
 ## Usage
 
 To run coverage tests...
 
-```coverage run -m pytest```
+`coverage run -m pytest`
 
-To get a coverage report run this 
-after running coverage run.
+To get a coverage report run this after running coverage run.
 
-```coverage report -m```
+`coverage report -m`
 
 To run mutation tests...
 
-```mutmut run```
+`mutmut run`
 
 The report will happen after the runtime.
