@@ -29,14 +29,13 @@ class TreeOperations:
                 root.right = TreeOperations.gen_tree(new_max_depth)
         return root
 
-
     @staticmethod
     def max_depth(nd: Node) -> int:
         def max_depth_func(nd: Node, level: int) -> int:
             # if nd is not None
             if nd:
                 return max(max_depth_func(nd.left, level + 1),
-                    max_depth_func(nd.right, level + 1))
+                           max_depth_func(nd.right, level + 1))
             # else return the level
             else:
                 return level
