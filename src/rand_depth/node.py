@@ -1,11 +1,10 @@
 from typing import Generic, TypeVar
 
-letter = 'A'
-assert letter == 'A'
-A = TypeVar(letter)
+T = TypeVar('T')
 
-class Node(Generic[A]):
-    def __init__(self, contents: A, left: 'Node[A]', right: 'Node[A]'):
+
+class Node(Generic[T]):
+    def __init__(self, contents: None, left: 'Node[T]', right: 'Node[T]'):
         self.contents = contents
         self.left = left
         self.right = right
