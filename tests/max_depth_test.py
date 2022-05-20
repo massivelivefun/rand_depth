@@ -5,41 +5,38 @@ from typing import TypeVar
 import unittest
 
 
-TreeOpClassInst = TreeOperations()
+class TreeOperationTest(unittest.TestCase):
+    def setUp(self) -> None:
+        self.tree_op_class_inst = TreeOperations()
 
+    def test_max_depth_3_bunch_of_times(self) -> None:
+        num_of_trees = 9999
+        max_depth = 3
+        for _ in range(0, num_of_trees):
+            root = TreeOperations.gen_tree(max_depth)
+            self.assertEqual(TreeOperations.max_depth(root), max_depth)
 
-def test_max_depth_3_bunch_of_times():
-    num_of_trees = 9999
-    max_depth = 3
-    for _ in range(0, num_of_trees):
-        root = TreeOperations.gen_tree(max_depth)
-        assert TreeOperations.max_depth(root) == max_depth
+    def test_max_depth_4_bunch_of_times(self) -> None:
+        num_of_trees = 9999
+        max_depth = 4
+        for _ in range(0, num_of_trees):
+            root = TreeOperations.gen_tree(max_depth)
+            self.assertEqual(TreeOperations.max_depth(root), max_depth)
 
+    def test_max_depth_5_bunch_of_times(self) -> None:
+        num_of_trees = 9999
+        max_depth = 5
+        for _ in range(0, num_of_trees):
+            root = TreeOperations.gen_tree(max_depth)
+            self.assertEqual(TreeOperations.max_depth(root), max_depth)
 
-def test_max_depth_4_bunch_of_times():
-    num_of_trees = 9999
-    max_depth = 4
-    for _ in range(0, num_of_trees):
-        root = TreeOperations.gen_tree(max_depth)
-        assert TreeOperations.max_depth(root) == max_depth
+    def test_gen_tree_is_static_method(self) -> None:
+        self.assertIsInstance(
+            self.tree_op_class_inst.gen_tree, types.FunctionType)
 
+    def test_max_depth_is_static_method(self) -> None:
+        self.assertIsInstance(
+            self.tree_op_class_inst.max_depth, types.FunctionType)
 
-def test_max_depth_5_bunch_of_times():
-    num_of_trees = 9999
-    max_depth = 5
-    for _ in range(0, num_of_trees):
-        root = TreeOperations.gen_tree(max_depth)
-        assert TreeOperations.max_depth(root) == max_depth
-        
-        
-def test_gen_tree_is_static_method():
-    assert isinstance(TreeOpClassInst.gen_tree, types.FunctionType)
-
-
-def test_max_depth_is_static_method():
-    assert isinstance(TreeOpClassInst.max_depth, types.FunctionType)
-
-
-# def test_a_is_typedef_object():
-#     assert isinstance(A, TypeVar)
-    
+    # def test_a_is_typedef_object():
+    #     assert isinstance(A, TypeVar)
