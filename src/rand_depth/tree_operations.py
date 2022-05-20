@@ -25,8 +25,8 @@ class TreeOperations:
                 root.right = TreeOperations.gen_tree(new_max_depth)
             else:
                 assert k == 2
-                root.left = TreeOperations.gen_tree(new_max_depth)
-                root.right = TreeOperations.gen_tree(new_max_depth)
+                root.left = TreeOperations.gen_tree(new_max_depth) # pragma: no mutate
+                root.right = TreeOperations.gen_tree(new_max_depth) # pragma: no mutate
         return root
 
     @staticmethod
